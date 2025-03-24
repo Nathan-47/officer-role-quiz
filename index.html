@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BCUSU Quiz</title>
+
+<link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="textsection" id="questionLead"></div>
+            <button class="quiz-button" id="answerABtn"></button>
+            <button class="quiz-button" id="answerBBtn"></button>
+        </div>
+        <div id="moreInfo"></div>
+
+        <!-- User clicks this window will reload -->
+        <button onclick="homeFunction()">Restart Quiz</button>
+    </div>
+    
+
+<script src="./data/quiz.js"></script>
+<script src="./quizHandler.js"></script>
+
+<script>
+    const homeFunction = () => {
+        addEventListener('click', function () {
+            window.location.reload();
+        });
+    };
+
+    
+
+</script>
+
+</body>
+</html>
