@@ -1,38 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>BCUSU Quiz</title>
-
-<link rel="stylesheet" href="./style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Quiza</title>
+  <style>
+    /* Add some basic styling */
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .quiz-container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .question {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+    .options button {
+      display: block;
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 16px;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="row">
-            <div class="textsection" id="questionLead"></div>
-            <button class="quiz-button" id="answerABtn"></button>
-            <button class="quiz-button" id="answerBBtn"></button>
-        </div>
-        <div id="moreInfo"></div>
-
-        <!-- User clicks this window will reload -->
-        <button onclick="homeFunction()">Restart Quiz</button>
+  <div class="quiz-container">
+    <div id="question" class="question"></div>
+    <div class="options">
+      <!-- Answer options will go here -->
     </div>
-    
+    <div id="result" class="result"></div>
+  </div>
 
-<script src="./data/quiz.js"></script>
-<script src="./quizHandler.js"></script>
-
-<script>
-    const homeFunction = () => {
-        addEventListener('click', function () {
-            window.location.reload();
-        });
-    };
-
-    
-
-</script>
-
+  <script src="./data/quiz.js"></script>
+  <script src="./quizHandler.js"></script>
 </body>
 </html>
