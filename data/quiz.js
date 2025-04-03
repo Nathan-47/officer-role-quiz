@@ -2,127 +2,76 @@ const quizData = [
     {
       question: "What would you consider as your best trait?",
       options: [
-        { text: "Talking", value: 1 },
-        { text: "Listening", value: 2 },
-        { text: "Proactive", value: 3 }
+        { text: "Confident Spokesperson", value: 3 },
+        { text: "Proactive and approachable", value: 2 },
+        { text: "Active listener", value: 1 }
       ],
     },
     {
-      question: "I'd want to motivate students to? [Pick multiple]",
+      question: "I'd want to motivate students to: [Pick two]",
       options: [
-        { text: "Earth", value: 1 },
-        { text: "Mars", value: 2 },
-        { text: "Jupiter", value: 3 },
-        { text: "Saturn", value: 4 }
+        { text: "Join and run societies", value: 1 },
+        { text: "Become a rep", value: 4 },
+        { text: "Give feedback about their learning experiences", value: 5 },
+        { text: "Get support or advice", value: 2 },
+        { text: "Organise inclusive events", value: 3 },
       ],
       // threshold value for each multiple choice question
-      threshold: 8, 
+      threshold: 9, 
     },
     {
-      question: "What is 2 + 2?",
+      question: "I want to help students with their employability by: [pick two]",
       options: [
-        { text: "3", value: 1 },
-        { text: "4", value: 2 },
-        { text: "5", value: 3 },
-        { text: "6", value: 4 }
+        { text: "Ensuring teaching and learning matches industry expectations", value: 4 },
+        { text: "Helping students Representatives acheive their potential", value: 2 },
+        { text: "Focusing BCUSU strategic planning to ensure students are supported fully", value: 5 },
+        { text: "Organising industry panel talks celebrating Black excellence", value: 3 },
+        { text: "Organising confidence building workshops", value: 1 },
+        { text: "Raising awarness of activities and support available via Graduate+ and Careers+, such as essay writting and support", value: 4 },
+      ],
+      threshold: 9, 
+    },
+    {
+      question: "I'd like to organise campaigns about:",
+      options: [
+        { text: "Teaching and learning quality", value: 5 },
+        { text: "How students can get involved with BCUSU", value: 4 },
+        { text: "Human Rights", value: 3 },
+        { text: "Skills you get from running a society", value: 2 },
+        { text: "Direct feedback from Reps", value: 1 },
+        { text: "All of the above", value: 2.5 },
       ],
     },
     {
-      question: "two cities in england?",
+      question: "I would prefer to focus on:",
       options: [
-        { text: "brum", value: 1 },
-        { text: "lagos", value: 2 },
-        { text: "london", value: 3 },
-        { text: "kingston", value: 4 }
+        { text: "Working directly with students", value: 2 },
+        { text: "Chairing boards, communities and adapting policies", value: 5 },
+        { text: "A bit of both", value: 1.5 },
       ],
-      threshold: 8, 
+    },
+    {
+      question: "When working with BCUSU, I'd like to:",
+      options: [
+        { text: "Promote the Advice Team to students", value: 3 },
+        { text: "Collaborate with the Outreach Team", value: 1 },
+        { text: "Lead the board of trustees", value: 5 },
+        { text: "Develop student skills and employability", value: 2 },
+        { text: "Ensure student feedback is central to all work", value: 4 },
+      ],
+    },
+    {
+      question: "I'd like to help amplify the views of students",
+      options: [
+        { text: "Concerned with academic issues", value: 4 },
+        { text: "Engaged in welfare and wellbeing", value: 3 },
+        { text: "Across a range of areas, from commuter students, to halls of residence, and part-time", value: 2 },
+        { text: "Of all campuses across the University", value: 1
+        },
+        { text: "For all areas", value: 5 },
+      ],
     },
   ];
   
-  console.log(quizData);
-
-
-//   TODO: Display the roles but not the values
-
-  let currentQuestionIndex = 0;
-
-  // Place the values from answer into this array
-  let getValueTotal = [];
-  let sumTotal = 0;
-
-
-
-// global button that can be accessed from anywhere
-let globalButton;
-
-const displayQuestion = () => {
-  const questionData = quizData[currentQuestionIndex];
-  const questionElement = document.getElementById("question");
-  const optionsElement = document.querySelector(".options");
-
-  questionElement.textContent = questionData.question;
-
-  optionsElement.innerHTML = "";
-  questionData.options.forEach(option => {
-    globalButton = document.createElement("button"); 
-    globalButton.textContent = option.text;
-
-    globalButton.addEventListener("click", () => handleAnswer(option.value));
-
-    // Add the button to the options container
-    optionsElement.appendChild(globalButton);
-  });
-};
-
-
-
-  // Handles the value/score given from the quizdata options
-  const handleAnswer = (getValue) => {
-
-    console.log(currentQuestionIndex)
-
-    // Push the values to the total array
-    getValueTotal.push(getValue);
-    sumTotal = getValueTotal.reduce((acc, curr) => acc + curr, 0);
-    console.log(sumTotal);
-
-    const currentQuestion = quizData[currentQuestionIndex];
-    const calcMultiTotal = getValueTotal
-    .slice(1)
-    .reduce((acc, curr) => acc + curr, 0);
-
-    // Execute for questions that have the multiple requirement
-    if (currentQuestionIndex === 1 && 2) {
-      // console.log(calcTotal);
-      // console.log(currentQuestion.threshold);
-      console.log(getValueTotal.length);
-
-      // Once the right number of inputs are given and the given total values meet threshold then move to next question
-      if (getValueTotal.length >= 3 && calcMultiTotal <= currentQuestion.threshold) {
-        currentQuestionIndex++;
-      }
-    } else {
-      // For all other questions, move to the next question
-      currentQuestionIndex++;
-    }
-
-    // Finish the quiz once the amount of questions left are at 0
-    if (currentQuestionIndex < quizData.length) {
-      displayQuestion();
-    } else {
-      showResults();
-    }
-  };
-
-
-    // Display officer role to user
-    const showResults = () => {
-    const getResult = document.getElementById("result");
-    getResult.textContent = `Quiz finished! Your score is: ${sumTotal} out of ${quizData.length}`;
-    console.log(sumTotal)
-  }
-  
-  // Init the quiz
-  displayQuestion();
 
 
