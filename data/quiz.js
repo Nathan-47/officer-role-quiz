@@ -16,8 +16,6 @@ const quizData = [
         { text: "Get support or advice", value: 2 },
         { text: "Organise inclusive events", value: 3 },
       ],
-      // threshold value for each multiple choice question
-      threshold: 9, 
     },
     {
       question: "I want to help students with their employability by: [pick two]",
@@ -29,7 +27,6 @@ const quizData = [
         { text: "Organising confidence building workshops", value: 1 },
         { text: "Raising awarness of activities and support available via Graduate+ and Careers+, such as essay writting and support", value: 4 },
       ],
-      threshold: 9, 
     },
     {
       question: "I'd like to organise campaigns about:",
@@ -72,6 +69,6 @@ const quizData = [
       ],
     },
   ];
-  
+
 
 
