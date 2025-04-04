@@ -1,6 +1,3 @@
-console.log(quizData);
-
-//   TODO: Display the roles but not the values
 
 let currentQuestionIndex = 0;
 
@@ -61,22 +58,19 @@ if (currentQuestionIndex === 1 || currentQuestionIndex === 2) {
 }
 
 
-  // Finish the quiz once the amount of questions left are at 0
+  // Finish the quiz once the amount of questions left are at 0 and show user their results
   if (currentQuestionIndex < quizData.length) {
     displayQuestion();
   } else {
     showResults();
+
+    // Hide buttons and questions
+
   }
 }; 
 
 
-  // Display officer role to user
-  const showResults = () => {
-    // display results
-}
-
 // Init the quiz
 displayQuestion();
-
 
 
