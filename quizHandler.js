@@ -8,6 +8,8 @@ let currentQuestionIndex = 0;
 let getValueTotal = [];
 let sumTotal = 0;
 
+// value count to make the multiple answer logic work
+let getAnswerCount = [];
 
 
 // global button that can be accessed from anywhere
@@ -33,36 +35,31 @@ questionData.options.forEach(option => {
 };
 
 
-
 // Handles the value/score given from the quizdata options
 const handleAnswer = (getValue) => {
 
-  console.log(currentQuestionIndex)
-
   // Push the values to the total array
   getValueTotal.push(getValue);
+  getAnswerCount.push(getValue);
   sumTotal = getValueTotal.reduce((acc, curr) => acc + curr, 0);
-  console.log(sumTotal);
 
-  const currentQuestion = quizData[currentQuestionIndex];
-  const calcMultiTotal = getValueTotal
-  .slice(1)
-  .reduce((acc, curr) => acc + curr, 0);
+// For questions that need two inputs
+if (currentQuestionIndex === 1 || currentQuestionIndex === 2) {
 
-  // Execute for questions that have the multiple requirement
-  if (currentQuestionIndex === 1 && 2) {
-    // console.log(calcTotal);
-    // console.log(currentQuestion.threshold);
-    console.log(getValueTotal.length);
+  // console.log(getValueTotal.length); 
+  // console.log(calcMultiTotal);
+  // console.log(getAnswerCount.length);
 
-    // Once the right number of inputs are given and the given total values meet threshold then move to next question
-    if (getValueTotal.length >= 3 && calcMultiTotal <= currentQuestion.threshold) {
-      currentQuestionIndex++;
-    }
-  } else {
-    // For all other questions, move to the next question
-    currentQuestionIndex++;
+  // When inputs are given then for the next question allow for another 2 inputs
+  if (getAnswerCount.length === 3) {
+      getAnswerCount = [1];
+      currentQuestionIndex++; 
   }
+} else {
+  // For other questions, move to the next question
+  currentQuestionIndex++;
+}
+
 
   // Finish the quiz once the amount of questions left are at 0
   if (currentQuestionIndex < quizData.length) {
@@ -70,17 +67,16 @@ const handleAnswer = (getValue) => {
   } else {
     showResults();
   }
-};
+}; 
 
 
   // Display officer role to user
   const showResults = () => {
-  const getResult = document.getElementById("result");
-  getResult.textContent = `Quiz finished! Your score is: ${sumTotal} out of ${quizData.length}`;
-  console.log(sumTotal)
+    // display results
 }
 
 // Init the quiz
 displayQuestion();
+
 
 
