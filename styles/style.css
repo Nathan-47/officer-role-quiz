@@ -31,4 +31,8 @@ body {
 .result {
     margin-top: 20px;
     font-size: 18px;
-  }
+}
+
+.hidden {
+    display: none;
+}
