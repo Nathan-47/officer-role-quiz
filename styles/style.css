@@ -1,0 +1,34 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+.quiz-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+.question {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+
+/* buttons */
+.options button {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+}
+.quiz-button {
+    padding: 10px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+/* resutls */
+.result {
+    margin-top: 20px;
+    font-size: 18px;
+  }
