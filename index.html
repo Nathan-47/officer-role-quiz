@@ -3,22 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./styles/style.css">
-  <link rel="icon" href="./images/bcusu_logo.png">
+  <link rel="stylesheet" href="./src/styles/style.css">
+  <link rel="icon" href="../images/bcusu_logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
   <title>BCUSU Officer Role Quiz</title>
 </head>
 <body>
 
-  <div class="quiz-container">
+  <div class="container">
+    <div class="row">
+      <h1 class="quiz-heading"v>Officer Role Quiz</h1>
     <div id="question" class="question"></div>
+    
     <div class="options">
       <!-- Answer options will go here -->
     </div>
     <div id="result" class="result"></div>
+    <button class="restartBtn hidden"><a href="/">Restart Quiz</a></button>
   </div>
+</div>
 
-  <script src="./data/quiz.js"></script>
-  <script src="./quizHandler.js"></script>
-  <script src="./results.js"></script>
+  <script src="./src/data/quiz.js"></script>
+  <script src="./src/components/quizHandler.js"></script>
+  <script src="./src/components/results.js"></script>
+
+  <!-- boostrap js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous">
+  </script>
 </body>
 </html>
