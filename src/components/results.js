@@ -32,8 +32,10 @@ const showResults = () => {
     const role = roles.find(r => sumTotal >= r.threshold);
     const resultMessage = role ? `<br><strong>${role.message}</strong>` : "";
 
+    
     // Add additional information after the initial results message
     resultEl.insertAdjacentHTML('afterend', addMsg);
+    
 
     // Display the results message
     resultEl.innerHTML = `
