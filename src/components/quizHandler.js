@@ -14,6 +14,8 @@ let globalButton;
 const optionsEl = document.querySelector('.options');
 const questionEl = document.querySelector('.question');
 const restartBtn = document.querySelector('.restartBtn');
+const getHeading = document.querySelector('.quiz-heading');
+const resultsMsg = document.querySelector('.result-msg');
 
 
 const displayQuestion = () => {
@@ -77,6 +79,8 @@ if (currentQuestionIndex === 1 || currentQuestionIndex === 2) {
       questionEl.classList.add('hidden');
       optionsEl.classList.add('hidden');
       restartBtn.classList.remove('hidden');
+      getHeading.classList.add('hidden');
+      resultsMsg.classList.remove('hidden');
     }
 
 // Init the quiz
