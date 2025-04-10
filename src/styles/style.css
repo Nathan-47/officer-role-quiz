@@ -6,19 +6,39 @@ body {
     max-width: 600px;
     margin: 0 auto;
 }
-.question {
-    font-size: 20px;
-    margin-bottom: 20px;
+.wrapper {
+    width: 50%;
+    margin: 10px auto;
+}
+.quiz-heading, .result-heading {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+.question, .result-msg {
+    font-size: 1.5rem !important;
+    margin-bottom: 1.5em;
+    margin-top: 1.6em;
+    font-family: 'Arial', sans-serif;
+    font-weight: 500;
 }
  
 
 /* buttons */
+.options {
+    display: -ms-inline-grid;
+    display: -moz-inline-grid;
+    justify-content: center;
+    width: auto;
+}
 .options button {
     display: block;
-    margin: 10px 0;
+    margin: 11px 5px;
     padding: 15px;
     font-size: 16px;
     border-radius: 12px !important;
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 .options button:hover {
     cursor: pointer;
@@ -26,13 +46,10 @@ body {
     background-color: #292929;
     color: #fafafa;
 }
-
-/* .quiz-button {
-    padding: 10px;
-    margin: 10px;
-    font-size: 16px;
-    cursor: pointer;
-} */
+button {
+    background-color: #e1f0f9;
+    color: #292929;
+}
 
 
 /* resutls */
@@ -49,5 +66,5 @@ body {
     display: none;
 }
 .disable {
-    background: red !important;
+    background-color: red;
 }
