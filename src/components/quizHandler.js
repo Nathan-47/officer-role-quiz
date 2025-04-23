@@ -16,12 +16,17 @@ const questionEl = document.querySelector('.question');
 const restartBtn = document.querySelector('.restartBtn');
 const getHeading = document.querySelector('.quiz-heading');
 const resultsMsg = document.querySelector('.result-msg');
+const questionImg = document.querySelector('.image');
+const img = document.querySelector('img');
 
 
 const displayQuestion = () => {
 const questionData = quizData[currentQuestionIndex];
 
 questionEl.textContent = questionData.question;
+
+// Add images to questions
+img.src = `${questionData.image}`
 
 optionsEl.innerHTML = "";
 questionData.options.forEach(option => {
@@ -81,6 +86,7 @@ if (currentQuestionIndex === 1 || currentQuestionIndex === 2) {
       restartBtn.classList.remove('hidden');
       getHeading.classList.add('hidden');
       resultsMsg.classList.remove('hidden');
+      questionImg.classList.add('hidden'); 
     }
 
 // Init the quiz
