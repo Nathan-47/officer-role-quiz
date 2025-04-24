@@ -7,13 +7,15 @@ body {
     margin: 0 auto;
 }
 .wrapper {
-    width: 50%;
-    margin: 10px auto;
+    width: 50% !important;
+    margin: auto;
+    margin-top: 3em !important;
 }
 .quiz-heading, .result-heading {
     font-family: "Poppins", sans-serif;
     font-weight: 800;
     font-style: normal;
+    margin-bottom: 1em;
 }
 .question, .result-msg {
     font-size: 1.5rem !important;
@@ -22,6 +24,16 @@ body {
     font-family: 'Arial', sans-serif;
     font-weight: 500;
 }
+.image {
+    width: 200px;
+    /* height: 200px; */
+}
+.question-image {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+    display: block;
+  }
  
 
 /* buttons */
@@ -51,20 +63,75 @@ button {
     color: #292929;
 }
 
-
 /* resutls */
 .result {
     margin-top: 20px;
     font-size: 18px;
 }
 .restartBtn {
-    padding: 30px;
+    padding: 20px;
     border-radius: 12px !important;
     background: orange;
+    font-size: 16px;
+    font-size: 1.2rem !important;
+    font-weight: 600;
+}
+.restartBtn:hover {
+    background-color: #292929;
+    color: orange;
+    transition: 0.2s;
 }
 .hidden {
     display: none;
 }
 .disable {
-    background-color: red;
+    background-color: #ccc !important;
+    color: #666 !important;
+    cursor: not-allowed !important;
+    pointer-events: none  !important; 
+}
+
+
+
+
+/* mobile and tablet screens */
+@media screen and (max-width: 1024px) {
+.wrapper {width: 80% !important;}
+}
+
+@media screen and (max-width: 990px) {
+.wrapper {margin: inherit;}
+}
+
+@media screen and (max-width: 768px) {
+.wrapper img {width: 500px;}
+}
+
+@media screen and (max-width: 600px) {
+.wrapper {width: 100% !important;}
+.wrapper img {
+    width: 450px; 
+    text-align: center;
+    margin: 5px auto;
+}
+.options button {width: 100% ;}
+}
+
+@media screen and (max-width: 500px) {
+.wrapper img {
+    width: 400px; 
+    text-align: center;
+}
+}
+
+@media screen and (max-width: 440px) {
+.wrapper img {width: 320px;}
+}
+
+@media screen and (max-width: 360px) {
+.wrapper img {width: 250px;}
+}
+
+@media screen and (max-width: 290px) {
+.wrapper img {width: 200px;}
 }
