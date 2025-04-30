@@ -18,6 +18,7 @@ const getHeading = document.querySelector('.quiz-heading');
 const resultsMsg = document.querySelector('.result-msg');
 const questionImg = document.querySelector('.image');
 const img = document.querySelector('img');
+const getQuestionLength = document.querySelector('.quiz-length');
 
 
 const displayQuestion = () => {
@@ -26,7 +27,10 @@ const questionData = quizData[currentQuestionIndex];
 questionEl.textContent = questionData.question;
 
 // Add images to questions
-img.src = `${questionData.image}`
+img.src = `${questionData.image}`;
+
+// display the current question user is answering
+getQuestionLength.textContent = `Question ${currentQuestionIndex + 1} of ${quizData.length}`;
 
 optionsEl.innerHTML = "";
 questionData.options.forEach(option => {
@@ -87,6 +91,7 @@ if (currentQuestionIndex === 1 || currentQuestionIndex === 2) {
       getHeading.classList.add('hidden');
       resultsMsg.classList.remove('hidden');
       questionImg.classList.add('hidden'); 
+      getQuestionLength.classList.add('hidden');
     }
 
 // Init the quiz
