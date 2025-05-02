@@ -41,14 +41,6 @@ questionData.options.forEach(option => {
 
   // Add the button to the options container
   optionsEl.appendChild(globalButton);
-
-  console.log(globalButton)
-
-    // Modify buttons on click
-    globalButton.addEventListener('click', (e) => {
-      console.log(e.target)
-      e.target.classList.add('disable');
-    });
 });
 };
 
@@ -61,8 +53,8 @@ const handleAnswer = (getValue) => {
   getAnswerCount.push(getValue);
   sumTotal = getValueTotal.reduce((acc, curr) => acc + curr, 0);
 
-// For questions that need two inputs
-if (currentQuestionIndex === 1 || currentQuestionIndex === 2) {
+  // For questions that need two inputs
+  if (currentQuestionIndex === 1 || currentQuestionIndex === 2) {
 
   // When inputs are given then for the next question allow for another 2 inputs
   if (getAnswerCount.length === 3) {
