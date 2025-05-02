@@ -25,10 +25,10 @@ const quizData = [
       options: [
         { text: "Ensuring teaching and learning matches industry expectations", value: 4 },
         { text: "Helping students Representatives acheive their potential", value: 2 },
-        { text: "Focusing BCUSU strategic planning to ensure students are supported fully", value: 5 },
+        { text: "Focusing BCUSU strategic planning to ensure students are supported", value: 5 },
         { text: "Organising industry panel talks celebrating Black excellence", value: 3 },
         { text: "Organising confidence building workshops", value: 1 },
-        { text: "Raising awarness of activities and support available via Graduate+ and Careers+, such as essay writting and support", value: 4 },
+        { text: "Raising awarness of activities and support available via Graduate+ and Careers+", value: 4 },
       ],
     },
     {
