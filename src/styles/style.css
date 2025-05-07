@@ -1,71 +1,87 @@
 body {
     font-family: Arial, sans-serif;
     padding: 20px;
+    background: #e1f0f9 !important;
+}
+.container {
+    --bs-gutter-x: 0.5rem;
 }
 .quiz-container {
     max-width: 600px;
     margin: 0 auto;
 }
 .wrapper {
-    width: 50% !important;
+    width: 100% !important;
     margin: auto;
-    margin-top: 3em !important;
+    margin-top: 2em !important;
+    text-align: center;
 }
 .quiz-heading, .result-heading {
     font-family: "Poppins", sans-serif;
     font-weight: 800;
-    font-style: normal;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
+    font-size: 2rem;
 }
 .question, .result-msg {
-    font-size: 1.5rem !important;
+    font-size: 1.25rem !important;
     margin-bottom: 1.5em;
     margin-top: 1.6em;
     font-family: 'Arial', sans-serif;
     font-weight: 500;
 }
+.question {
+    margin-bottom: 1em !important;
+}
 .image {
-    width: 200px;
-    /* height: 200px; */
+    width: 100%;
+    height: auto;
+}
+.pic-img {
+    width: 400px !important;
+    border-radius: 12px;
 }
 .question-image {
     max-width: 100%;
+    width: 200px !important;
     height: auto;
     margin: 10px 0;
     display: block;
-  }
-  .quiz-length {
+}
+.quiz-length {
     font-family: "Poppins", sans-serif;
-    font-size: 1.2rem;
-  }
+    font-size: 0.9rem;
+}
  
 
 /* buttons */
 .options {
-    display: -ms-inline-grid;
-    display: -moz-inline-grid;
-    justify-content: center;
-    width: auto;
+    display: -ms-grid;
+    display: -moz-grid;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin: auto;
 }
 .options button {
     display: block;
-    margin: 11px 5px;
+    margin: 11px;
     padding: 15px;
-    font-size: 16px;
     border-radius: 12px !important;
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 .options button:hover {
     cursor: pointer;
     transition: 0.2s;
+    background-color: #fff793;
+    color: #292929;
+    border: 2px solid #292929;
+}
+button {
     background-color: #292929;
     color: #fafafa;
 }
-button {
-    background-color: #e1f0f9;
-    color: #292929;
-}
+
 
 /* resutls */
 .result {
@@ -73,26 +89,34 @@ button {
     font-size: 18px;
 }
 .restartBtn {
-    padding: 20px;
+    padding: 10px;
     border-radius: 12px !important;
     background: orange;
-    font-size: 16px;
+    color: #292929;
     font-size: 1.2rem !important;
     font-weight: 600;
+    width: 20%;
 }
 .restartBtn:hover {
     background-color: #292929;
     color: orange;
     transition: 0.2s;
 }
+.result-heading {
+    margin-top: -1em;
+}
+.result-image {
+    width: 300px !important;
+    border-radius: 12px;
+    margin-bottom: -1.5em;
+}
 .hidden {
     display: none;
 }
 .disable {
-    background-color: #ccc !important;
-    color: #666 !important;
-    cursor: not-allowed !important;
-    pointer-events: none  !important; 
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
 }
 
 
@@ -100,7 +124,7 @@ button {
 
 /* mobile and tablet screens */
 @media screen and (max-width: 1024px) {
-.wrapper {width: 80% !important;}
+.wrapper {width: 100% !important;}
 }
 
 @media screen and (max-width: 990px) {
@@ -112,19 +136,36 @@ button {
 }
 
 @media screen and (max-width: 600px) {
-.wrapper {width: 100% !important;}
+.wrapper {
+    width: 100% !important;
+    margin-top: 1em !important;
+}
 .wrapper img {
     width: 450px; 
     text-align: center;
     margin: 5px auto;
 }
 .options button {width: 100%;}
+.options {
+    display: -ms-grid;
+    display: -moz-grid;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+}
 }
 
 @media screen and (max-width: 500px) {
 .wrapper img {
     width: 400px; 
     text-align: center;
+}
+.options {
+    display: -ms-grid;
+    display: -moz-grid;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0px;
 }
 }
 
