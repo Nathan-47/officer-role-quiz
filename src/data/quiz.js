@@ -9,7 +9,7 @@ const quizData = [
       ],
     },
     {
-      question: "I'd want to motivate students to: [Pick two]",
+      question: "I'd want to motivate students to: (pick two answers)",
       image: "./src/images/quiz_society.png",
       options: [
         { text: "Join and run societies", value: 1 },
@@ -20,7 +20,7 @@ const quizData = [
       ],
     },
     {
-      question: "I want to help students with their employability by: [pick two]",
+      question: "I want to help students with their employability by: (pick two answers)",
       image:"./src/images/quiz_BW_new.jpg",
       options: [
         { text: "Ensuring teaching and learning matches industry expectations", value: 4 },
