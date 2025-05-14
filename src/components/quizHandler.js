@@ -19,6 +19,7 @@ const resultsMsg = document.querySelector('.result-msg');
 const questionImg = document.querySelector('.image');
 const img = document.querySelector('img');
 const getQuestionLength = document.querySelector('.quiz-length');
+const hideSwipe = document.querySelector('.mobile-swipe');
 
 
 const displayQuestion = () => {
@@ -34,7 +35,7 @@ getQuestionLength.textContent = `Question ${currentQuestionIndex + 1} of ${quizD
 
 optionsEl.innerHTML = "";
 questionData.options.forEach(option => {
-  globalButton = document.createElement("button"); 
+  globalButton = document.createElement("button");  
   globalButton.textContent = option.text;
 
   globalButton.addEventListener("click", () => handleAnswer(option.value));
@@ -50,7 +51,7 @@ const handleAnswer = (getValue) => {
 
   // Push the values to the total array
   getValueTotal.push(getValue);
-  getAnswerCount.push(getValue);
+  getAnswerCount.push(getValue); 
   sumTotal = getValueTotal.reduce((acc, curr) => acc + curr, 0);
 
   // For questions that need two inputs
@@ -84,6 +85,7 @@ const handleAnswer = (getValue) => {
       resultsMsg.classList.remove('hidden');
       questionImg.classList.add('hidden'); 
       getQuestionLength.classList.add('hidden');
+      hideSwipe.classList.add('hidden');
     }
 
 // Init the quiz
