@@ -60,7 +60,7 @@ const handleAnswer = (getValue) => {
   // When inputs are given then for the next question allow for another 2 inputs
   if (getAnswerCount.length === 3) {
       getAnswerCount = [1];
-      currentQuestionIndex++; 
+      currentQuestionIndex++;
   }
 } else {
   // For other questions, move to the next question
