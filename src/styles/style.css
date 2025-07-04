@@ -126,6 +126,8 @@ button {
     opacity: 0.5;
     pointer-events: none;
     cursor: not-allowed;
+    background: #fff793;
+    color: #292929;
 }
 
 
