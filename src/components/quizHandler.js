@@ -5,11 +5,8 @@ let currentQuestionIndex = 0;
 let getValueTotal = [];
 let sumTotal = 0;
 
-// value count to make the multiple answer logic work
+// Value count to make the multiple answer logic work
 let getAnswerCount = [];
-
-// global elements 
-let globalButton;
 
 const optionsEl = document.querySelector('.options');
 const questionEl = document.querySelector('.question');
@@ -21,60 +18,63 @@ const img = document.querySelector('img');
 const getQuestionLength = document.querySelector('.quiz-length');
 const hideSwipe = document.querySelector('.mobile-swipe');
 
-
 const displayQuestion = () => {
-const questionData = quizData[currentQuestionIndex];
+  const questionData = quizData[currentQuestionIndex];
 
-questionEl.textContent = questionData.question;
+  // Reset answer count for question
+  getAnswerCount = [];
 
-// Add images to questions
-img.src = `${questionData.image}`;
+  questionEl.textContent = questionData.question;
+  img.src = `${questionData.image}`;
+  getQuestionLength.textContent = `Question ${currentQuestionIndex + 1} of ${quizData.length}`;
 
-// display the current question user is answering
-getQuestionLength.textContent = `Question ${currentQuestionIndex + 1} of ${quizData.length}`;
+  optionsEl.innerHTML = "";
 
-optionsEl.innerHTML = "";
-questionData.options.forEach(option => {
-  globalButton = document.createElement("button");  
-  globalButton.textContent = option.text;
+  questionData.options.forEach((option, index) => {
+    const btn = document.createElement("button");
+    btn.textContent = option.text;
+    btn.classList.add("option-btn");
+    btn.dataset.value = option.value;
 
-  globalButton.addEventListener("click", () => handleAnswer(option.value));
+    // Button is disabled once users clicks on multiple choice question
+    btn.addEventListener("click", (e) => {
+      e.target.classList.add('disable')
+      handleAnswer(option.value);
+    });
 
-  // Add the button to the options container
-  optionsEl.appendChild(globalButton);
-});
+    // Add the button to options container
+    optionsEl.appendChild(btn);
+  });
 };
 
+// Handle the value/score give from the quizdata button
+const handleAnswer = (value) => {
 
-// Handles the value/score given from the quizdata options
-const handleAnswer = (getValue) => {
-
-  // Push the values to the total array
-  getValueTotal.push(getValue);
-  getAnswerCount.push(getValue); 
+  // Push value to the total array
+  getValueTotal.push(value);
+  getAnswerCount.push(value);
   sumTotal = getValueTotal.reduce((acc, curr) => acc + curr, 0);
 
-  // For questions that need two inputs
+  // For questions that need two inputs/answers
   if (currentQuestionIndex === 1 || currentQuestionIndex === 2) {
-
-  // When inputs are given then for the next question allow for another 2 inputs
-  if (getAnswerCount.length === 3) {
-      getAnswerCount = [1];
-      currentQuestionIndex++;
+    if (getAnswerCount.length < 2) {
+      return; 
+    } else {
+      currentQuestionIndex++; 
+    }
+  } else {
+    // For other questons, move to the next question
+    currentQuestionIndex++;
   }
-} else {
-  // For other questions, move to the next question
-  currentQuestionIndex++;
-}
 
-  // Finish the quiz once the amount of questions left are at 0 and show user their results
+  // Finish the quiz once questions remaining becomes 0, then display resuts.
   if (currentQuestionIndex < quizData.length) {
     displayQuestion();
   } else {
     showResults();
     hideAll();
   }
-}; 
+};
 
     // Hide buttons and questions
     const hideAll = () => {
@@ -88,7 +88,5 @@ const handleAnswer = (getValue) => {
       hideSwipe.classList.add('hidden');
     }
 
-// Init the quiz
+// init the quiz
 displayQuestion();
-
-
