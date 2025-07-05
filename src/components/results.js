@@ -4,19 +4,19 @@ const showResults = () => {
     // Define roles through thresholds and a message
     const roles = [
         { 
-            threshold: 35, 
+            threshold: 30, 
             message: "Congratulations! You qualify for the President role. " 
         },
         { 
-            threshold: 30, 
+            threshold: 23, 
             message: "Congratulations! You qualify for the VP Academic role." 
         },
         { 
-            threshold: 25, 
+            threshold: 20, 
             message: "Congratulations! You qualify for the VP Equity role." 
         },
         { 
-            threshold: 20,
+            threshold: 17,
              message: "Congratulations! You qualify for the VP Community role." 
         },
         { 
@@ -30,7 +30,7 @@ const showResults = () => {
     const resultMessage = role ? `<br><strong>${role.message}</strong>` : "";
 
     // display results image
-    const resImg = './src/images/quiz_officer_team.png';
+    const resImg = '../images/quiz_officer_team.png';
     
     // Display the results message
     resultEl.innerHTML = `
