@@ -6,6 +6,18 @@ body {
 .container {
     --bs-gutter-x: 0.5rem;
 }
+
+/* accessibility focus on elements of pages */
+a:focus-visible,
+button:focus-visible,
+select:focus-visible {
+    outline: 6px solid #0097f1;  
+    outline-offset: 3px;      
+    background-color: #fafafa;
+    color: #292929;
+    transition: outline-color 0.2s ease, background-color 0.2s ease;
+}
+
 .quiz-container {
     max-width: 600px;
     margin: 0 auto;
