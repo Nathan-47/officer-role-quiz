@@ -4,23 +4,23 @@ const showResults = () => {
     // Define roles through thresholds and a message
     const roles = [
         { 
-            threshold: 30, 
+            threshold: 34, 
             message: "Congratulations! You qualify for the President role. " 
         },
         { 
-            threshold: 23, 
-            message: "Congratulations! You qualify for the VP Academic role." 
+            threshold: 28, 
+            message: "Congratulations! You qualify for the VP Education role." 
         },
         { 
-            threshold: 20, 
-            message: "Congratulations! You qualify for the VP Equity role." 
+            threshold: 23, 
+            message: "Congratulations! You qualify for the VP Welfare role." 
         },
         { 
             threshold: 17,
              message: "Congratulations! You qualify for the VP Community role." 
         },
         { 
-            threshold: 15, 
+            threshold: 14, 
             message: "Congratulations! You qualify for the VP Student Voice role." 
         },
     ];
