@@ -1,28 +1,25 @@
-// create the observer entry function
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if(entry.isIntersecting) {
-            entry.target.classList.add('show')
-        } else {
-            entry.target.classList.remove('show')
-        }
-    });
-});
-
-// Select the container class and hide until observed
-const hiddenEl = document.querySelectorAll('.container');
-hiddenEl.forEach((el) => observer.observe(el));
-
-
-// Mobile ONLY fade animation function
+// Observer only for certain mobile width
 function isMobile() {
-  return window.innerWidth <= 720; 
+  return window.innerWidth <= 720;
 }
 
-// Run only on mobile devices
-if (isMobile()) {
+// Check for elements on page load
+document.addEventListener("DOMContentLoaded", () => {
+  const containers = document.querySelectorAll('.container');
+
+  containers.forEach((el) => {
+    const rect = el.getBoundingClientRect();
+    const inView = rect.top < window.innerHeight && rect.bottom > 0;
+
+    if (inView) {
+      el.classList.add('show');
+    }
+  });
+});
+
+// Observer function
+function runIntersectionObserver(options = {}) {
   const observer = new IntersectionObserver((entries) => {
-    console.log('Intersected:', entry.target, 'Status:', entry.isIntersecting);
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add('show');
@@ -30,16 +27,19 @@ if (isMobile()) {
         entry.target.classList.remove('show');
       }
     });
-  }, {
-        rootMargin: '0px 0px -20% 0px'
-  });
+  }, options);
 
-  const hiddenEl = document.querySelectorAll('.container');
-  hiddenEl.forEach((el) => observer.observe(el));
+  const hiddenEls = document.querySelectorAll('.container');
+  hiddenEls.forEach((el) => observer.observe(el));
+}
+
+// Run observer for mobile if not meet width size, then desktop
+if (isMobile()) {
+  // Use rootMargin to trigger earlier on mobile
+  runIntersectionObserver({ rootMargin: '0px 0px -20% 0px' });
 } else {
-  // Optional fallback for desktop: show all immediately
-  const hiddenEl = document.querySelectorAll('.container');
-  hiddenEl.forEach((el) => el.classList.add('show'));
+  const hiddenEls = document.querySelectorAll('.container');
+  hiddenEls.forEach((el) => el.classList.add('show'));
 }
 
 
