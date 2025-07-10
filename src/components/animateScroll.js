@@ -17,10 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+
 // Observer function
 function runIntersectionObserver(options = {}) {
   const observer = new IntersectionObserver((entries) => {
-    console.log("Observing", hiddenEls.length, ".container elements");
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add('show');
@@ -33,6 +33,7 @@ function runIntersectionObserver(options = {}) {
   const hiddenEls = document.querySelectorAll('.container');
   hiddenEls.forEach((el) => observer.observe(el));
 }
+
 
 // Run observer for mobile if not meet width size, then desktop
 if (isMobile()) {
