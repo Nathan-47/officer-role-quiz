@@ -166,6 +166,10 @@ button {
     background: #fff793;
     color: #292929;
 }
+.option-btn.selected {
+  background-color: #F4AA82;
+  color: #292929;
+}
 
 
 /* start screen */
