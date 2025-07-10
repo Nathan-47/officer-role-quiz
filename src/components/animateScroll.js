@@ -22,6 +22,7 @@ function isMobile() {
 // Run only on mobile devices
 if (isMobile()) {
   const observer = new IntersectionObserver((entries) => {
+    console.log('Intersected:', entry.target, 'Status:', entry.isIntersecting);
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add('show');
@@ -29,6 +30,8 @@ if (isMobile()) {
         entry.target.classList.remove('show');
       }
     });
+  }, {
+        rootMargin: '0px 0px -20% 0px'
   });
 
   const hiddenEl = document.querySelectorAll('.container');
