@@ -36,10 +36,9 @@ const displayQuestion = () => {
     btn.classList.add("option-btn");
     btn.dataset.value = option.value;
 
-    // Button is disabled once users clicks on multiple choice question
+    // button targeted for toggle event
     btn.addEventListener("click", (e) => {
-      e.target.classList.add('disable')
-      handleAnswer(option.value);
+      handleAnswer(option.value, e.target);
     });
 
     // Add the button to options container
@@ -47,32 +46,35 @@ const displayQuestion = () => {
   });
 };
 
-// Handle the value/score give from the quizdata button
-const handleAnswer = (value) => {
+const handleAnswer = (value, button) => {
+  const isMultiAnswer = currentQuestionIndex === 1 || currentQuestionIndex === 2;
+  const requiredCount = isMultiAnswer ? 2 : 1;
 
-  // Push value to the total array
-  getValueTotal.push(value);
-  getAnswerCount.push(value);
-  sumTotal = getValueTotal.reduce((acc, curr) => acc + curr, 0);
-
-  // For questions that need two inputs/answers
-  if (currentQuestionIndex === 1 || currentQuestionIndex === 2) {
-    if (getAnswerCount.length < 2) {
-      return; 
-    } else {
-      currentQuestionIndex++; 
-    }
+  // Toggle click button in case user wants to choose another answer
+  if (getAnswerCount.includes(value)) {
+    getAnswerCount = getAnswerCount.filter(v => v !== value);
+    getValueTotal.splice(getValueTotal.lastIndexOf(value), 1);
+    button.classList.remove('selected');
   } else {
-    // For other questons, move to the next question
-    currentQuestionIndex++;
+    getAnswerCount.push(value);
+    getValueTotal.push(value);
+    button.classList.add('selected');
   }
 
-  // Finish the quiz once questions remaining becomes 0, then display resuts.
-  if (currentQuestionIndex < quizData.length) {
-    displayQuestion();
-  } else {
-    showResults();
-    hideAll();
+  // record total score that user has accumilated 
+  sumTotal = getValueTotal.reduce((acc, curr) => acc + curr, 0);
+
+  // Only advance if required number of answers are selected
+  if (getAnswerCount.length === requiredCount) {
+    setTimeout(() => {
+      currentQuestionIndex++;
+      if (currentQuestionIndex < quizData.length) {
+        displayQuestion();
+      } else {
+        showResults();
+        hideAll();
+      }
+    }, 300);
   }
 };
 
