@@ -1,6 +1,6 @@
 // Observer only for certain mobile width
 function isMobile() {
-  return window.innerWidth <= 720;
+  return window.innerWidth >= 720;
 }
 
 // Check for elements on page load
