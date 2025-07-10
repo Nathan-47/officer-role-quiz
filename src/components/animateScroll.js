@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Observer function
 function runIntersectionObserver(options = {}) {
   const observer = new IntersectionObserver((entries) => {
+    console.log("Observing", hiddenEls.length, ".container elements");
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add('show');
