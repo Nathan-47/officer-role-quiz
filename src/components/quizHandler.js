@@ -26,6 +26,7 @@ const displayQuestion = () => {
 
   questionEl.textContent = questionData.question;
   img.src = `${questionData.image}`;
+  img.alt =`${questionData.alt}`;
   getQuestionLength.textContent = `Question ${currentQuestionIndex + 1} of ${quizData.length}`;
 
   optionsEl.innerHTML = "";
