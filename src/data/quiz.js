@@ -2,6 +2,7 @@ const quizData = [
     {
       question: "What would you consider as your best trait?",
       image: "../images/quiz_public_speaking.png",
+      alt:"Former officers Nathan and Jay talking at the roaries",
       options: [
         { text: "Confident Spokesperson", value: 3 },
         { text: "Proactive and approachable", value: 2 },
@@ -11,6 +12,7 @@ const quizData = [
     {
       question: "I'd want to motivate students to: (pick two answers)",
       image: "../images/quiz_society.png",
+      alt:"Picture of Society winners at The Roaries awards evening",
       options: [
         { text: "Join and run societies", value: 1 },
         { text: "Become a rep", value: 4 },
@@ -22,6 +24,7 @@ const quizData = [
     {
       question: "I want to help students with their employability by: (pick two answers)",
       image:"../images/quiz_BW_new.jpg",
+      alt:"Air drone shot of a packed out corrdior within Curzon Building",
       options: [
         { text: "Ensuring teaching and learning matches industry expectations", value: 4 },
         { text: "Helping students Representatives acheive their potential", value: 2 },
@@ -34,6 +37,7 @@ const quizData = [
     {
       question: "I'd like to organise campaigns about:",
       image:"../images/quiz_bhm_2024.jpg",
+      alt:"Students eating at the Shattering the glass celing event",
       options: [
         { text: "Teaching and learning quality", value: 5 },
         { text: "How students can get involved with BCUSU", value: 4 },
@@ -46,6 +50,7 @@ const quizData = [
     {
       question: "I would prefer to focus on:",
       image:"../images/quiz_students.jpg",
+      alt:"Three people talking a laughing with each other at out Big Welcome Fair outisde the Eagle and Ball",
       options: [
         { text: "Working directly with students", value: 2 },
         { text: "Chairing boards, communities and adapting policies", value: 5 },
@@ -55,6 +60,7 @@ const quizData = [
     {
       question: "When working with BCUSU, I'd like to:",
       image:"../images/quiz_lgbtqa+.jpg",
+      alt:"LGBTQ+ Society with the LGBTQ+ flag hanging on a rail sitting at their stalls in the Seacole atrium",
       options: [
         { text: "Promote the Advice Team to students", value: 3 },
         { text: "Collaborate with the Outreach Team", value: 1 },
@@ -66,6 +72,7 @@ const quizData = [
     {
       question: "I'd like to help amplify the views of students",
       image:"../images/quiz_halls.png",
+      alt:"Nice side shot of Uni Locks bullding located at the back of Curzon",
       options: [
         { text: "Concerned with academic issues", value: 4 },
         { text: "Engaged in welfare and wellbeing", value: 3 },
