@@ -28,16 +28,19 @@ select:focus-visible {
     margin-top: 2em !important;
     text-align: center;
 }
-.quiz-heading, .result-heading {
+.result-heading {
     font-family: "Poppins", sans-serif;
     font-weight: 800;
     margin-bottom: 0.5em;
     font-size: 2rem;
 }
+.quiz-heading {
+    display: none;
+}
 .question, .result-msg {
-    font-size: 1.25rem !important;
-    margin-bottom: 1.5em;
-    margin-top: 1.6em;
+    font-size: 1rem !important;
+    margin-bottom: 2em;
+    margin-top: 2em;
     font-family: 'Arial', sans-serif;
     font-weight: 500;
 }
@@ -49,7 +52,7 @@ select:focus-visible {
     height: auto;
 }
 .pic-img {
-    width: 400px !important;
+    width: 300px !important;
     border-radius: 12px;
 }
 .question-image {
@@ -99,11 +102,16 @@ select:focus-visible {
 }
 .options button {
     display: block;
-    margin: 11px;
-    padding: 15px;
-    border-radius: 12px !important;
-    font-size: 1.1rem;
-    font-weight: 500;
+    background: #292929;
+    color: #fafafa;
+    margin: 5px;
+    border: 2px solid #292929;
+    /* display: flex; */
+    cursor: pointer;
+    padding: 1.4rem; 
+    border-radius: 8px;
+    font-size: 1rem;
+    /* font-weight: 700; */
 }
 .options button:hover {
     cursor: pointer;
@@ -152,7 +160,7 @@ button {
     margin-top: -1em;
 }
 .result-image {
-    width: 300px !important;
+    width: 200px !important;
     border-radius: 12px;
     margin-bottom: -1.5em;
 }
