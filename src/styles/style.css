@@ -78,11 +78,11 @@ select:focus-visible {
 
 
 /* AOS  */
-.container {
+/* .container {
     opacity: 0;
     filter: blur(0.5px);
     transform: translateY(100%);
-}
+} */
 .show {
     opacity: 1;
     filter: blur(0);
