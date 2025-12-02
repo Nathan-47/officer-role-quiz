@@ -5,23 +5,23 @@ const showResults = () => {
     const roles = [
         { 
             threshold: 34, 
-            message: "Congratulations! You qualify for the President role. " 
+            message: "Your answers match best for the President role. " 
         },
         { 
             threshold: 28, 
-            message: "Congratulations! You qualify for the VP Education role." 
+            message: "Your answers match best for the VP Education role." 
         },
         { 
             threshold: 23, 
-            message: "Congratulations! You qualify for the VP Welfare role." 
+            message: "Your answers match best for the VP Welfare role." 
         },
         { 
             threshold: 17,
-             message: "Congratulations! You qualify for the VP Community role." 
+             message: "Your answers match best for the VP Community role." 
         },
         { 
             threshold: 14, 
-            message: "Congratulations! You qualify for the VP Student Voice role." 
+            message: "Your answers match best for the VP Student Voice role." 
         },
     ];
 
@@ -34,7 +34,7 @@ const showResults = () => {
     
     // Display the results message
     resultEl.innerHTML = `
-      <h2 class="result-heading">Quiz Completed!</h2>
+      <h2 class="result-heading">Role matched!</h2>
       <img class="result-image" src="${resImg}" alt="officer team" />
       <p class="result-msg">${resultMessage}</p>
     `;
